@@ -6,32 +6,73 @@
 	font-family: sans-serif;
 }
 
-#nav {margin: 30px;}
+#menu {
+	margin: 0 auto;
+	height: 55px;
+	width: 1000px; 
+}
 
-#nav li {
+#panel {
+	width: 100%;
+	height: 55px;
+	background: #393939;
+}
+
+.nav li {
 	list-style: none;
 	float: left;
 	width: 250px;
 }
 
-#nav li ul {
+.nav ul {
 	display: block;
 }
 
-#nav li a {
+.nav a {
 	text-decoration: none;
 	font-size: 20px;
 	color: #f3f3f3;
 	background: #393939;
 	display: block;
-	margin: 3px;
+	
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+	border-top: 1px solid #666;
+	
 	padding: 15px;
 	text-align: center;
+	transition: 0.3s all;
 }
 
-#nav li a:hover {
+.nav:first-child a{border-left: 0;}
+.nav:last-child a{border-right: 0;}
+
+.nav li a:hover {
 	background: #666;
 }
+
+.drop li:last-child a{
+	border-radius: 0 0 3px 3px;
+}
+
+/* Всплывание */
+
+.list {
+	position: relative;
+}
+
+.drop {
+	position: absolute;
+	opacity: 0;
+	left: -9999em;
+}
+
+.list:hover .drop{
+	left: 0;
+	opacity: 1;
+	transition: 0.3s opacity;
+}
+
 
 /*#sidebar.active {
 	left: 20px;
